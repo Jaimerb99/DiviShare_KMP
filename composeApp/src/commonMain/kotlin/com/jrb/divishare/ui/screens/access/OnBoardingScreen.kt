@@ -1,4 +1,4 @@
-package com.jrb.divishare.ui.screens
+package com.jrb.divishare.ui.screens.access
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -83,7 +83,7 @@ fun OnboardingScreen(
     Scaffold(
         modifier = Modifier.padding(
             WindowInsets.systemBars.asPaddingValues()
-        ),
+        ).background(color = AppTheme.colors.background),
         topBar = {
             TopAppBar(
                 title = {},
