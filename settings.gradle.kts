@@ -1,4 +1,4 @@
-rootProject.name = "DiviShare"
+rootProject.name = "DiviShare_KMM"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
