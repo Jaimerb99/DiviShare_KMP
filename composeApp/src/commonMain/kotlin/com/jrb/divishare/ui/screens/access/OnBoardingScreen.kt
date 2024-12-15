@@ -38,6 +38,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
 import com.jrb.divishare.ui.AppTheme
 import divishare_kmm.composeapp.generated.resources.Res
 import divishare_kmm.composeapp.generated.resources.onboarding1
@@ -52,6 +55,16 @@ data class OnboardingContent(
     val title: String,
     val description: String
 )
+
+class OnboardingScreen : Screen {
+    @Composable
+    override fun Content() {
+        val navigator = LocalNavigator.currentOrThrow
+        val onNavigateToLogin: () -> Unit = {/*navigator.push()*/}
+        OnboardingScreen(onNavigateToLogin)
+    }
+
+}
 
 @Composable
 fun OnboardingScreen(
@@ -81,9 +94,8 @@ fun OnboardingScreen(
     val pagerState = rememberPagerState{ onboardingScreens.size }
 
     Scaffold(
-        modifier = Modifier.padding(
-            WindowInsets.systemBars.asPaddingValues()
-        ).background(color = AppTheme.colors.background),
+        modifier = Modifier.background(color = AppTheme.colors.background)
+            .padding(WindowInsets.systemBars.asPaddingValues()),
         topBar = {
             TopAppBar(
                 title = {},
@@ -207,6 +219,7 @@ fun OnboardingScreen(
             }
         }
     }
+
 }
 
 @Composable
