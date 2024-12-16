@@ -60,7 +60,7 @@ class OnboardingScreen : Screen {
     @Composable
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
-        val onNavigateToLogin: () -> Unit = {/*navigator.push()*/}
+        val onNavigateToLogin: () -> Unit = {navigator.push(LoginScreen())}
         OnboardingScreen(onNavigateToLogin)
     }
 

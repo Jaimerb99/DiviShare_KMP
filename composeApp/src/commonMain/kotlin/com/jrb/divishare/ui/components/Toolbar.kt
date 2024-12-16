@@ -44,7 +44,7 @@ fun ToolBar(
         //Spacer(modifier = Modifier.height(40.dp))
 
     }*/
-    Row(verticalAlignment = Alignment.CenterVertically,) {
+    Row(verticalAlignment = Alignment.CenterVertically,modifier = Modifier.padding(vertical = 10.dp)) {
         Spacer(modifier = Modifier.width(20.dp))
         Image(
             painter = painterResource(Res.drawable.ic_add_project)
@@ -107,7 +107,7 @@ fun BackToolbar(
             Text(
                 text = title,
                 style = MaterialTheme.typography.h6,
-                modifier = Modifier.fillMaxWidth().padding(end = 40.dp),
+                modifier = Modifier.fillMaxWidth().padding(end = 60.dp),
                 textAlign = TextAlign.Center
             )
         },

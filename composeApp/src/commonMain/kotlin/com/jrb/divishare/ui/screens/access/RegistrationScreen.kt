@@ -38,6 +38,9 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
 import com.jrb.divishare.ui.AppTheme
 import com.jrb.divishare.ui.components.BackToolbar
 import com.jrb.divishare.ui.components.DateBox
@@ -49,8 +52,22 @@ import com.jrb.divishare.ui.components.PhoneTextField
 import com.jrb.divishare.ui.components.TextButtonBox
 import com.jrb.divishare.util.isValidEmail
 
+class RegistrationScreen : Screen {
+    @Composable
+    override fun Content() {
+        val navigator = LocalNavigator.currentOrThrow
+        val registerUser: () -> Unit = {}
+        val onBack: () -> Unit = {navigator.pop()}
+        RegistrationScreen(registerUser, onBack)
+    }
+
+}
+
 @Composable
-fun RegistrationScreen(){
+fun RegistrationScreen(
+    registerUser: () -> Unit,
+    onBack: () -> Unit
+){
     var emailText by remember { mutableStateOf(TextFieldValue("")) }
     var nameText by remember { mutableStateOf(TextFieldValue("")) }
     var passwordText by remember { mutableStateOf(TextFieldValue("")) }
