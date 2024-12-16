@@ -15,9 +15,11 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.jrb.divishare.ui.components.BackToolbar
-import com.jrb.divishare.ui.components.EmailBox
+import com.jrb.divishare.ui.components.DateDialog
+import com.jrb.divishare.ui.components.EmailTextField
 import com.jrb.divishare.ui.components.LoginToolbar
-import com.jrb.divishare.ui.components.PasswordBox
+import com.jrb.divishare.ui.components.PasswordTextField
+import com.jrb.divishare.ui.components.PhoneTextField
 import com.jrb.divishare.ui.components.TextButton
 import com.jrb.divishare.ui.components.TextButtonBox
 import com.jrb.divishare.ui.components.ToolBar
@@ -28,7 +30,7 @@ import com.jrb.divishare.ui.components.ToolBar
 fun TextFieldPreview(){
     MaterialTheme{
         var emailText by remember { mutableStateOf(TextFieldValue("")) }
-        EmailBox(emailText, {emailText = it})
+        EmailTextField(emailText, {emailText = it})
     }
 }
 
@@ -37,7 +39,17 @@ fun TextFieldPreview(){
 fun PassTextFieldPreview(){
     MaterialTheme{
         var pass by remember { mutableStateOf(TextFieldValue("")) }
-        PasswordBox(pass, {pass = it}, false)
+        PasswordTextField(pass, {pass = it}, false)
+    }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun PhoneNumberTextFieldPreview(){
+    MaterialTheme{
+        var prefix by remember { mutableStateOf(TextFieldValue("")) }
+        var number by remember { mutableStateOf(TextFieldValue("")) }
+        PhoneTextField(prefix, number, {prefix = it}, {number = it})
     }
 }
 
@@ -76,9 +88,18 @@ fun TextButtonPreview(){
 
 @Composable
 @Preview()
-fun MBackToolbarPreview(){
+fun BackToolbarPreview(){
     MaterialTheme{
-        BackToolbar("Login", {})
+        BackToolbar("Create Account", {})
+    }
+}
+
+@SuppressLint("UnrememberedMutableState")
+@Composable
+@Preview()
+fun DateDialogPreview(){
+    MaterialTheme{
+        DateDialog(mutableStateOf(true), mutableStateOf(""))
     }
 }
 

@@ -45,6 +45,7 @@ fun TextButtonBox(
     modifier: Modifier = Modifier,
     text: String,
     buttonEnabled: State<Boolean> = androidx.compose.runtime.mutableStateOf(true),
+    fontSize: Int = 20,
     onClick: () -> Unit
 ) {
     Box(
@@ -58,7 +59,7 @@ fun TextButtonBox(
         Text(
             text = text,
             style = MaterialTheme.typography.button.copy(fontWeight = FontWeight.Bold),
-            fontSize = 15.sp,
+            fontSize = fontSize.sp,
             color = AppTheme.colors.onPrimary
         )
     }

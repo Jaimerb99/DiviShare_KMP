@@ -120,7 +120,7 @@ fun BackToolbar(
                 )
             }
         },
-
+        elevation = 0.dp
     )
 }
 
