@@ -3,6 +3,7 @@ package com.jrb.divishare.previews
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.jrb.divishare.ui.screens.access.ForgotPasswordScreen
 import com.jrb.divishare.ui.screens.access.LoginScreen
 import com.jrb.divishare.ui.screens.access.OnboardingScreen
 import com.jrb.divishare.ui.screens.access.RegistrationScreen
@@ -11,9 +12,7 @@ import com.jrb.divishare.ui.screens.access.RegistrationScreen
 @Preview
 fun OnBoardingPreview(){
     MaterialTheme{
-        OnboardingScreen(
-            onNavigateToLogin = {}
-        )
+        OnboardingScreen{}
     }
 }
 
@@ -22,7 +21,7 @@ fun OnBoardingPreview(){
 @Preview
 fun LoginScreenPreview(){
     MaterialTheme{
-        LoginScreen()
+        LoginScreen({},{},{})
     }
 }
 
@@ -30,6 +29,14 @@ fun LoginScreenPreview(){
 @Preview
 fun RegisterScreenPreview(){
     MaterialTheme{
-        RegistrationScreen()
+        RegistrationScreen({},{})
+    }
+}
+
+@Composable
+@Preview
+fun ForgotPasswordScreenPreview(){
+    MaterialTheme{
+        ForgotPasswordScreen({},{})
     }
 }
