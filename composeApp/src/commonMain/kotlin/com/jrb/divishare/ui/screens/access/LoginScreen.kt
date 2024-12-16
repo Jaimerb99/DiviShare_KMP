@@ -40,9 +40,6 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import cafe.adriel.voyager.core.screen.Screen
-import cafe.adriel.voyager.navigator.LocalNavigator
-import cafe.adriel.voyager.navigator.currentOrThrow
 import com.jrb.divishare.ui.AppTheme
 import com.jrb.divishare.ui.components.EmailTextField
 import com.jrb.divishare.ui.components.LoginToolbar
@@ -53,24 +50,8 @@ import divishare_kmm.composeapp.generated.resources.Res
 import divishare_kmm.composeapp.generated.resources.logini_image
 import org.jetbrains.compose.resources.painterResource
 
-class LoginScreen : Screen {
-    @Composable
-    override fun Content() {
-        val navigator = LocalNavigator.currentOrThrow
-        val onNavigateToForgotPassword: () -> Unit = {navigator.push(ForgotPasswordScreen())}
-        val onNavigateToRegister: () -> Unit = {navigator.push(RegistrationScreen())}
-        val onNavigateToMainScreen: () -> Unit = {navigator.push(OnboardingScreen())}
-        LoginScreen(onNavigateToForgotPassword,onNavigateToMainScreen, onNavigateToRegister)
-    }
-
-}
-
 @Composable
-fun LoginScreen(
-    onNavigateToForgotPassword: () -> Unit,
-    onNavigateToMainScreen: () -> Unit,
-    onNavigateToRegister: () -> Unit,
-){
+fun LoginScreen(){
     var emailText by remember { mutableStateOf(TextFieldValue("")) }
     var passwordText by remember { mutableStateOf(TextFieldValue("")) }
 
@@ -144,7 +125,7 @@ fun LoginScreen(
                             .height(40.dp),
                         text = "Log In",
                         buttonEnabled = buttonEnabled
-                    ) { onNavigateToMainScreen() }
+                    ) {}
                     Spacer(modifier = Modifier.height(25.dp))
                     Text(
                         "Forgot Password?",
@@ -153,7 +134,7 @@ fun LoginScreen(
                             .clickable(
                             interactionSource = interactionSource,
                             indication = null
-                        ) { onNavigateToForgotPassword() }
+                        ) { /*TODO*/ }
                     )
                 }
 
@@ -174,7 +155,7 @@ fun LoginScreen(
                         .clickable(
                             interactionSource = interactionSource,
                             indication = null
-                        ) { onNavigateToRegister()}
+                        ) { /*TODO*/ }
                 )
             }
         }

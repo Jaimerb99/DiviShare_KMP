@@ -54,7 +54,6 @@ import org.jetbrains.compose.resources.vectorResource
 fun EmailTextField(
     value: TextFieldValue,
     onValueChange: (TextFieldValue) -> Unit,
-    inverted: Boolean = false
 ){
     val focusManager = LocalFocusManager.current
     val emailBorder = if(value.text.isNotEmpty() && !isValidEmail(value.text)) Color.Red else Color.Transparent
@@ -65,12 +64,12 @@ fun EmailTextField(
         onValueChange = onValueChange,
         shape = RoundedCornerShape(10.dp),
         colors = TextFieldDefaults.textFieldColors(
-            backgroundColor = if (inverted) AppTheme.colors.background else AppTheme.colors.primaryVariant,
-            textColor = if (inverted) AppTheme.colors.primaryVariant else AppTheme.colors.onPrimary,
+            backgroundColor = AppTheme.colors.primaryVariant,
+            textColor = AppTheme.colors.onPrimary,
             focusedIndicatorColor = Color.Transparent,
             disabledIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
-            placeholderColor = if (inverted) AppTheme.colors.primary else AppTheme.colors.onPrimary.copy(alpha = 0.6f)
+            placeholderColor = AppTheme.colors.onPrimary.copy(alpha = 0.6f)
         ),
         placeholder = {Text("your@email.com")},
         modifier = Modifier
