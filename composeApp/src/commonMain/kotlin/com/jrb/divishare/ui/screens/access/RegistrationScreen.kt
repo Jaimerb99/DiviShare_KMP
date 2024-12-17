@@ -105,7 +105,7 @@ fun RegistrationScreen(
             }
             .padding(WindowInsets.systemBars.asPaddingValues()),
         topBar = {
-            BackToolbar("Create Account"){}
+            BackToolbar("Create Account"){onBack()}
         }
     ) {
         Box(

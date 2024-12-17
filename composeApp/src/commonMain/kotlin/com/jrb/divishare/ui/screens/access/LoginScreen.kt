@@ -153,7 +153,7 @@ fun LoginScreen(
                             .clickable(
                             interactionSource = interactionSource,
                             indication = null
-                        ) { /*TODO*/ }
+                        ) { onNavigateToForgotPassword()}
                     )
                 }
 
@@ -174,7 +174,7 @@ fun LoginScreen(
                         .clickable(
                             interactionSource = interactionSource,
                             indication = null
-                        ) { /*TODO*/ }
+                        ) { onNavigateToRegister() }
                 )
             }
         }

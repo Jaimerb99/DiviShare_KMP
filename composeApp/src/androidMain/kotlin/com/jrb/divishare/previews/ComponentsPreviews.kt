@@ -17,12 +17,19 @@ import androidx.compose.ui.unit.dp
 import com.jrb.divishare.ui.components.BackToolbar
 import com.jrb.divishare.ui.components.DateDialog
 import com.jrb.divishare.ui.components.EmailTextField
+import com.jrb.divishare.ui.components.EmptyScreen
 import com.jrb.divishare.ui.components.LoginToolbar
 import com.jrb.divishare.ui.components.PasswordTextField
 import com.jrb.divishare.ui.components.PhoneTextField
+import com.jrb.divishare.ui.components.ProjectItem
 import com.jrb.divishare.ui.components.TextButton
 import com.jrb.divishare.ui.components.TextButtonBox
 import com.jrb.divishare.ui.components.ToolBar
+import divishare_kmm.composeapp.generated.resources.Res
+import divishare_kmm.composeapp.generated.resources.ic_project_cocktail
+import divishare_kmm.composeapp.generated.resources.ic_project_sun
+import divishare_kmm.composeapp.generated.resources.ic_project_water_drop
+import divishare_kmm.composeapp.generated.resources.no_results_ilustration
 
 
 @Composable
@@ -70,6 +77,14 @@ fun MainToolbarPreview(){
 }
 
 @Composable
+@Preview(showBackground = true)
+fun BackToolbarPreview(){
+    MaterialTheme{
+        BackToolbar("Create Account", {})
+    }
+}
+
+@Composable
 @Preview()
 fun MainButtonPreview(){
     MaterialTheme{
@@ -86,14 +101,6 @@ fun TextButtonPreview(){
     }
 }
 
-@Composable
-@Preview()
-fun BackToolbarPreview(){
-    MaterialTheme{
-        BackToolbar("Create Account", {})
-    }
-}
-
 @SuppressLint("UnrememberedMutableState")
 @Composable
 @Preview()
@@ -102,5 +109,26 @@ fun DateDialogPreview(){
         DateDialog(mutableStateOf(true), mutableStateOf(""))
     }
 }
+
+
+@Composable
+@Preview()
+fun ProjectItemPreview(){
+    MaterialTheme{
+        ProjectItem("Project Name", Res.drawable.ic_project_cocktail){}
+    }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun EmptyScreenPreview() {
+    MaterialTheme {
+        EmptyScreen(
+            "No shared expenses available",
+            "Tap on “+”  on the top toolbar to create a new shared expenses project",
+            Res.drawable.no_results_ilustration)
+    }
+}
+
 
 

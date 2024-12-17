@@ -34,6 +34,7 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.core.screen.Screen
@@ -45,8 +46,7 @@ import com.jrb.divishare.ui.components.EmailTextField
 import com.jrb.divishare.ui.components.TextButtonBox
 import divishare_kmm.composeapp.generated.resources.Res
 import divishare_kmm.composeapp.generated.resources.ic_empty_inbox
-import divishare_kmm.composeapp.generated.resources.logini_image
-import divishare_kmm.composeapp.generated.resources.no_results_image
+
 import org.jetbrains.compose.resources.painterResource
 
 class ForgotPasswordScreen : Screen {
@@ -77,7 +77,7 @@ fun ForgotPasswordScreen(
         /*.padding(WindowInsets.systemBars.asPaddingValues())*/
         ,
         topBar = {
-            Box (modifier = Modifier.padding(top = 30.dp)){ BackToolbar("Forgot Password"){ onBack() } }
+            Box (modifier = Modifier.padding(top = 45.dp)){ BackToolbar("Forgot Password"){ onBack() } }
 
         }
     ) {
@@ -98,7 +98,7 @@ fun ForgotPasswordScreen(
                     "Please enter your email address, and we will send you an email with instructions to reset your password.",
                     style = TextStyle(
                         fontSize = MaterialTheme.typography.subtitle1.fontSize,
-                        lineHeight = 16.sp
+                        lineHeight = 16.sp,
                     )
                 )
             }
