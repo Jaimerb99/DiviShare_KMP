@@ -15,20 +15,21 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.jrb.divishare.ui.components.BackToolbar
+import com.jrb.divishare.ui.components.BottomBar
 import com.jrb.divishare.ui.components.DateDialog
 import com.jrb.divishare.ui.components.EmailTextField
 import com.jrb.divishare.ui.components.EmptyScreen
 import com.jrb.divishare.ui.components.LoginToolbar
+import com.jrb.divishare.ui.components.NavigationSideBar
 import com.jrb.divishare.ui.components.PasswordTextField
 import com.jrb.divishare.ui.components.PhoneTextField
 import com.jrb.divishare.ui.components.ProjectItem
 import com.jrb.divishare.ui.components.TextButton
 import com.jrb.divishare.ui.components.TextButtonBox
 import com.jrb.divishare.ui.components.ToolBar
+import com.jrb.divishare.ui.data.ItemBottomNav
 import divishare_kmm.composeapp.generated.resources.Res
 import divishare_kmm.composeapp.generated.resources.ic_project_cocktail
-import divishare_kmm.composeapp.generated.resources.ic_project_sun
-import divishare_kmm.composeapp.generated.resources.ic_project_water_drop
 import divishare_kmm.composeapp.generated.resources.no_results_ilustration
 
 
@@ -127,6 +128,24 @@ fun EmptyScreenPreview() {
             "No shared expenses available",
             "Tap on “+”  on the top toolbar to create a new shared expenses project",
             Res.drawable.no_results_ilustration)
+    }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun BottomBarPreview() {
+    MaterialTheme {
+        val list = listOf(ItemBottomNav.Home, ItemBottomNav.Calculator, ItemBottomNav.Settings)
+        BottomBar(list, "home") { }
+    }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun SideBarPreview() {
+    MaterialTheme {
+        val list = listOf(ItemBottomNav.Home, ItemBottomNav.Calculator, ItemBottomNav.Settings)
+        NavigationSideBar(list, "home") { }
     }
 }
 

@@ -48,6 +48,15 @@ kotlin {
             implementation(libs.voyager.tabNavigator)
             implementation(libs.kmp.date.time.picker)
             implementation(libs.kotlinx.datetime)
+
+            // Material 3
+            implementation(compose.material3)
+
+            // Navigation
+            implementation(libs.navigation.compose)
+
+            // window-size
+            implementation(libs.screen.size)
         }
     }
 }
